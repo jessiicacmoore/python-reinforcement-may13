@@ -3,16 +3,17 @@ class Person:
     self.mood = emotions
 
   def __str__(self):
-    return f"Emotions: {self.emotions}"
+    return f"Emotions: {self.mood}"
 
   def get_mood(self):
     for emotion, level in self.mood.items():
-      if level == 3:
-        return f"I am feeling a high amount of {emotion}"
+      if level == 1:
+        print(f"I am feeling a low amount of {emotion}")
       elif level == 2:
-        return f"I am feeling a moderate amount of {emotion}"
-      elif level == 1:
-        return f"I am feeling a low amount of {emotion}"
+        print(f"I am feeling a moderate amount of {emotion}")
+      elif level == 3:
+        print(f"I am feeling a high amount of {emotion}")
+        # why does my for loop stop when i use return instead of print()?
 
 emotions = {
   'happiness': 3,
@@ -22,5 +23,6 @@ emotions = {
 
 person1 = Person(emotions)
 # print(person1)
-print(person1.mood)
-print(person1.get_mood())
+# print(person1.mood)
+person1.get_mood()
+
